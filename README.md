@@ -45,7 +45,7 @@ npm install
 ```
 
 4. Set up an environment variables in a ``.env`` file: 
-```
+```bash
 DATABASE_URL = your_database_url
 JWT_SECRET = your_jwt_secret
 ```
