@@ -29,18 +29,18 @@ Quarlyze is a dynamic platform where intellectuals come together to engate in me
 
 1. Clone the repository:
 
-```
+```bash
 git clone https://github.com/codefromtheslum/quaralyze-server
 ```
 
 2. Navigate to the project directory:
 
-```
+```bash
 cd quaralyze-server
 ```
 
 3. Install dependencies: 
-```
+```bash
 npm install
 ```
 
@@ -51,7 +51,7 @@ JWT_SECRET = your_jwt_secret
 ```
 
 5. Start the development server:
-```
+```bash
 npm run dev
 ```
 
@@ -65,15 +65,15 @@ npm run dev
 Contributions are welcome! Here's how you can help: 
 1. Fork the repository
 2. Create a branch: 
-```
+```bash
 git checkout -b feature-name
 ```
 3. Make your changes and commit: 
-```
+```bash
 git commit -m "Add your message here"
 ```
 4. Push your branch: 
-```
+```bash
 git push origin feature-name
 ```
 
