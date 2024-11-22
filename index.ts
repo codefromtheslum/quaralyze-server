@@ -1,12 +1,15 @@
 import express from "express";
 import { mainApp } from "./mainApp";
+import { quaralyzerDB } from "./config/quaralyzerDB";
+import env from "dotenv";
+env.config();
 
-const port: number = 2345;
+const port: any = `${parseInt(process.env.PORT!)}`
 const app = express();
 
 mainApp(app);
 const server = app.listen(port, () => {
-  console.log("Server is live and listening on port:", port);
+ quaralyzerDB();
 });
 
 process.on("uncaughtException", (error: any) => {

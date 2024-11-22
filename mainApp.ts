@@ -2,6 +2,10 @@ import { Application, json, Request, Response } from "express";
 import cors from "cors";
 import morgan from "morgan";
 import helmet from "helmet";
+import user from "./routes/userRoute";
+import post from "./routes/postRoute";
+import comment from "./routes/commentRoute";
+import reply from "./routes/replyRoute";
 
 export const mainApp = (app: Application) => {
   app.use(json());
@@ -26,4 +30,8 @@ export const mainApp = (app: Application) => {
       });
     }
   });
+  app.use("/user", user);
+  app.use("/post", post);
+  app.use("/comment", comment);
+  app.use("/reply", reply)
 };
