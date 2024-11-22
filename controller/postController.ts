@@ -184,7 +184,7 @@ export const deletePost = async (req: Request, res: Response): Promise<any> => {
 
 export const getAllPost = async (req: Request, res: Response): Promise<any> => {
   try {
-    const posts = await postModel.find().populate("comments");
+    const posts = await postModel.find().populate("likes").populate("comments");
 
     return res.status(200).json({
       message: `${posts?.length} post(s) gotten`,
@@ -203,7 +203,7 @@ export const likePost = async (req: Request, res: Response): Promise<any> => {
     const { postId, userId } = req.params;
 
     // Find the post and user by their IDs
-    const post = await postModel.findById(postId);
+    const post = await postModel.findById(postId).populate("comments");
     const user = await userModel.findById(userId);
 
     // Check if the user or post doesn't exist
@@ -241,7 +241,7 @@ export const unlikePost = async (req: Request, res: Response): Promise<any> => {
     const { postId, userId } = req.params;
 
     // Find the post and user by their IDs
-    const post = await postModel.findById(postId);
+    const post = await postModel.findById(postId).populate("");
     const user = await userModel.findById(userId);
 
     // Check if the user or post doesn't exist

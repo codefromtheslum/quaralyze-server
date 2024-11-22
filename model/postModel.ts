@@ -12,7 +12,6 @@ const postModel = new Schema<iPostData>(
     likes: [
       {
         type: Types.ObjectId,
-        ref: "likes",
       },
     ],
     comments: [

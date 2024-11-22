@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const replyController_1 = require("../controller/replyController");
+const router = (0, express_1.Router)();
+router.route("/:userId/:commentId/create-reply").post(replyController_1.createReply);
+router.route("/:userId/:commentId/delete-reply").delete(replyController_1.deleteReply);
+router.route("/:replyId/:userId/like").post(replyController_1.likeReply);
+router.route("/:replyId/:userId/unlike").post(replyController_1.unlikeReply);
+exports.default = router;
